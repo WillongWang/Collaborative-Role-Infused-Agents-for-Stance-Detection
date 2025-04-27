@@ -165,9 +165,6 @@ data.to_csv("result_cola.csv", index=False)
 
 
 # Stance accuracy
-# gpt-35-turbo, gpt-4o-mini: Accuracy: 0.6667 (66.67%)
-# gpt-4o: Accuracy: 0.7333 (73.33%)
-# deepseek-chat(V3): Accuracy: 0.8000 (80.00%)
 def calculate_accuracy(stance_file, judgement_file):
     # Read the CSV files
     df_stance = pd.read_csv(stance_file)
