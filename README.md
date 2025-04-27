@@ -7,3 +7,41 @@ The agents, through their assigned roles, activate their embedded domain knowled
 
 ![](https://github.com/WillongWang/Collaborative-Role-Infused-Agents-for-Stance-Detection/blob/main/1.png)  
 ![](https://github.com/WillongWang/Collaborative-Role-Infused-Agents-for-Stance-Detection/blob/main/2.png)  
+
+## Run  
+
+Modify the LLM and API key in `cola.py`:  
+```
+client = OpenAI(api_key="sk-xx", base_url="") # base_url="https://api.deepseek.com"
+'''
+client = AzureOpenAI(
+api_key="", # your api key
+api_version="", # replace
+azure_endpoint="https://hkust.azure-api.net") # replace
+'''
+
+python cola.py
+```  
+The code takes `/SemEval/small.csv` as an example input, which contains tweet, target, and stance. The domain specialist determines the relevant domain as prior knowledge based on the target.  
+
+## Result  
+Stance accuracy:  
+| Model               | Accuracy     |
+|---------------------|--------------|
+| gpt-35-turbo        | 0.6667 (66.67%) |
+| gpt-4o-mini         | 0.6667 (66.67%) |
+| gpt-4o              | 0.7333 (73.33%) |
+| deepseek-chat (V3)  | 0.8000 (80.00%) |
+
+### AzureOpenAI API bug  
+The linguistic expert agent gets stuck and fails to output when analyzing the last line of Tweet in small.csv, but it works fine when analyzed separately in error.py.  
+```
+import pandas as pd
+df = pd.read_csv("result_cola.csv")
+last_row_value = df.iloc[-1]['Linguist Analysis']
+print(last_row_value) # "Error"
+```
+
+
+
+
