@@ -5,7 +5,7 @@ from openai import OpenAI, AzureOpenAI
 # client = OpenAI(api_key="sk-xx", base_url="https://api.deepseek.com")
 client = AzureOpenAI(
 api_key="", # your api key
-api_version="2024-06-01", # replace
+api_version="", # replace
 azure_endpoint="https://hkust.azure-api.net") # replace
 
 # Your API key
