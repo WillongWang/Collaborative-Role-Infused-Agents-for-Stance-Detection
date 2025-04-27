@@ -19,7 +19,8 @@ api_key="", # your api key
 api_version="", # replace
 azure_endpoint="https://hkust.azure-api.net") # replace
 '''
-
+```  
+```
 python cola.py
 ```  
 The code takes `/SemEval/small.csv` as an example input, which contains tweet, target, and stance. The domain specialist determines the relevant domain as prior knowledge based on the target.  
