@@ -35,7 +35,7 @@ Stance accuracy:
 | deepseek-chat (V3)  | 0.8000 (80.00%) |
 
 ### AzureOpenAI API bug  
-The linguistic expert agent gets stuck and fails to output when analyzing the last line of Tweet in `small.csv`, but it works fine when analyzed separately in `error.py`.  
+The linguistic expert agent gets stuck and fails to output when analyzing the last line of tweet in `small.csv`, but it works fine when analyzed separately in `error.py`.  
 ```
 import pandas as pd
 df = pd.read_csv("result_cola.csv")
